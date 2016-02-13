@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
   `cantidad` INT NULL,
   `descuento` DECIMAL(2,2) NULL,
   `importeNeto` DECIMAL(11,2) NULL,
-  `liquidado` BIT(1) NULL,
+  `liquidado` TINYINT(1) NOT NULL,
   `Proveedor_idProveedor` INT NOT NULL,
   `UnidadNegocio_idUnidadNegocio` INT NOT NULL,
   PRIMARY KEY (`idCompra`, `Proveedor_idProveedor`, `UnidadNegocio_idUnidadNegocio`),
@@ -148,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Empleado` (
   `salario` DECIMAL(11,2) NULL,
   `fechaIngreso` DATETIME NULL,
   `tipoJornada` VARCHAR(45) NULL,
-  `activo` BIT(1) NULL,
+  `activo` TINYINT(1) NOT NULL,
   `comision` VARCHAR(45) NULL,
   PRIMARY KEY (`idEmpleado`))
 ENGINE = InnoDB;
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Venta` (
   `cantidad` INT NULL,
   `descuento` DECIMAL(2,2) NULL,
   `importeNeto` DECIMAL(11,2) NULL,
-  `liquidado` BIT(1) NULL,
+  `liquidado` TINYINT(1) NOT NULL,
   `Empleado_idEmpleado` INT NOT NULL,
   `UnidadNegocio_idUnidadNegocio` INT NOT NULL,
   PRIMARY KEY (`idVenta`, `Empleado_idEmpleado`, `UnidadNegocio_idUnidadNegocio`),
